@@ -18,6 +18,8 @@ if __name__ == "__main__":
                 with open(root + '/' + victim,'r') as f:
                     print(lines)
                     lines = f.readlines()
+                    if(payload in "".join(lines)):
+                        continue
                     if( 'if __name__ == "__main__":' in "".join(lines)):
                         index = lines.index( 'if __name__ == "__main__":\n')
                         print(index)
