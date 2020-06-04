@@ -2,7 +2,7 @@ import os
 if __name__ == "__main__":
     print('virus-chan activated')
     for (root,dirs,files) in os.walk('.', topdown=True):
-        print(root)
-        print(dirs)
-        print(files)
-        print('--------------------------------')
+        for victim in files:
+            if(victim[-3:] == '.py'):
+                print(root)
+                print(victim)
